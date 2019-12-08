@@ -6,7 +6,7 @@ This [GitHub Action](https://github.com/features/actions) sets up a MySQL databa
 
 ```yaml
 steps:
-- uses: getong/mariadb-action@v1.4
+- uses: getong/mariadb-action@v1
   with:
     host port: 3800 # Optional, default value is 3306. The port of host
     container port: 3307 # Optional, default value is 3306. The port of container
