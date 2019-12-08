@@ -6,7 +6,7 @@ This [GitHub Action](https://github.com/features/actions) sets up a MySQL databa
 
 ```yaml
 steps:
-- uses: samin/mysql-action@v1
+- uses: getong/mariadb-action@v1.4
   with:
     host port: 3800 # Optional, default value is 3306. The port of host
     container port: 3307 # Optional, default value is 3306. The port of container
@@ -19,7 +19,7 @@ steps:
     mysql password: ${{ secrets.DatabasePassword }} # Required if "mysql user" exists. The password for the "mysql user"
 ```
 
-See [Docker Hub](https://hub.docker.com/_/mysql) for available versions.
+See [Docker Hub](https://hub.docker.com/_/mariadb) for available versions.
 
 See [Creating and using secrets (encrypted variables)](https://help.github.com/en/articles/virtual-environments-for-github-actions#creating-and-using-secrets-encrypted-variables) for hiding database password.
 

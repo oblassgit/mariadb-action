@@ -17,7 +17,7 @@ elif [ -n "$INPUT_MYSQL_USER" ]; then
   docker_run="$docker_run -e MYSQL_RANDOM_ROOT_PASSWORD=true -e MYSQL_USER=$INPUT_MYSQL_USER -e MYSQL_PASSWORD=$INPUT_MYSQL_PASSWORD"
 else
   echo "Using empty password for root"
-  
+
   docker_run="$docker_run -e MYSQL_ALLOW_EMPTY_PASSWORD=true"
 fi
 
@@ -27,7 +27,7 @@ if [ -n "$INPUT_MYSQL_DATABASE" ]; then
   docker_run="$docker_run -e MYSQL_DATABASE=$INPUT_MYSQL_DATABASE"
 fi
 
-docker_run="$docker_run -d -p $INPUT_HOST_PORT:$INPUT_CONTAINER_PORT mysql:$INPUT_MYSQL_VERSION --port=$INPUT_CONTAINER_PORT"
+docker_run="$docker_run -d -p $INPUT_HOST_PORT:$INPUT_CONTAINER_PORT mariadb:$INPUT_MYSQL_VERSION --port=$INPUT_CONTAINER_PORT"
 docker_run="$docker_run --character-set-server=$INPUT_CHARACTER_SET_SERVER --collation-server=$INPUT_COLLATION_SERVER"
 
 sh -c "$docker_run"

@@ -1,6 +1,6 @@
-name: 'Start MySQL'
-description: 'Start a MySQL database'
-author: 'Samin Shams'
+name: 'Start MariaDB'
+description: 'Start a MariaDB database'
+author: 'getong'
 branding:
   icon: 'database'
   color: 'green'
