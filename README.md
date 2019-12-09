@@ -1,6 +1,6 @@
-# MySQL GitHub Action
+# MariaDB GitHub Action
 
-This [GitHub Action](https://github.com/features/actions) sets up a MySQL database.
+This [GitHub Action](https://github.com/features/actions) sets up a MariaDB database.
 
 ## Usage
 
