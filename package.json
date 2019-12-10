@@ -1,7 +1,7 @@
 {
-  "name": "mysql-action",
+  "name": "mariadb-action",
   "version": "1.1.0",
-  "description": "MySQL Github Action",
+  "description": "MariaDB Github Action",
   "main": "build/app.js",
   "directories": {
     "test": "test"
@@ -13,19 +13,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mirromutth/mysql-action.git"
+    "url": "git+https://github.com/getong/mariadb-action.git"
   },
   "keywords": [
-    "MySQL",
+    "MariaDB",
     "Action",
     "Github-Actions"
   ],
-  "author": "Mirro Mutth",
+  "author": "getong",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mirromutth/mysql-action/issues"
+    "url": "https://github.com/getong/mariadb-action/issues"
   },
-  "homepage": "https://github.com/mirromutth/mysql-action#readme",
+  "homepage": "https://github.com/getong/mariadb-action#readme",
   "devDependencies": {
     "@types/chai": "^4.2.3",
     "@types/lodash": "^4.14.142",

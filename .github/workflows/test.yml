@@ -1,16 +1,10 @@
 name: test
 
-on:
-  push:
-    branches:
-    - master
-  pull_request:
-    branches:
-    - master
+on: push
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
@@ -24,10 +18,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Set up MySQL 5.7
-      uses: mirromutth/mysql-action@master
+    - name: Set up MariaDB 10
+      uses: getong/mariadb-action@master
       with:
-        mysql version: 5.7
+        mysql version: 10.4.10
         mysql database: test
         mysql root password: ${{ secrets.DatabasePassword }}
     - name: npm install, build, and test
