@@ -49,8 +49,8 @@ jobs:
       run: sudo service mysql stop # Shutdown the Default MySQL, "sudo" is necessary, please not remove it
 
     - # ... some steps before set-up MySQL ...
-    - name: Set up MySQL
-      uses: getong/mariadb-action@v1.2
+    - name: Set up MariaDB
+      uses: getong/mariadb-action@v1
       with:
         # ... Set-up MariaDB configuration, see Usage
 
