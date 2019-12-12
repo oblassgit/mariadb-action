@@ -21,8 +21,8 @@ inputs:
     description: '--collation-server - The character collation of MySQL server'
     required: false
     default: 'utf8mb4_general_ci'
-  mysql version:
-    description: 'Version of MySQL to use'
+  mariadb version:
+    description: 'Version of MariaDB to use'
     required: false
     default: 'latest'
   mysql root password:
