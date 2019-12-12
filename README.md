@@ -50,7 +50,7 @@ jobs:
 
     - # ... some steps before set-up MySQL ...
     - name: Set up MariaDB
-      uses: getong/mariadb-action@v1
+      uses: getong/mariadb-action@v1.1
       with:
         # ... Set-up MariaDB configuration, see Usage
 
