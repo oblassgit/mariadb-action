@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import createQueryer from './connection.ts';
+import createQueryer from './connection';
 
 describe('Database', () => {
   const queryer = createQueryer();

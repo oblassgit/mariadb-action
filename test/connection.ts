@@ -1,7 +1,7 @@
 import { promisify } from 'util';
 import { createConnection } from 'mysql';
 
-import { required } from './arguments.ts';
+import { required } from './arguments';
 
 export interface Queryer {
   init(): Promise<void>;
