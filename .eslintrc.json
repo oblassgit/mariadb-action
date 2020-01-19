@@ -22,13 +22,7 @@
     "no-undef": "off"
   },
   "settings": {
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "ts": "never"
-      }
-    ],
+    "import/extensions": [".ts"],
     "import/resolver": {
       "node": {
         "extensions": [".ts"],
