@@ -19,10 +19,12 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "import/extensions": ["error", "ignorePackages", {
+      "ts": "never"
+    }],
     "no-undef": "off"
   },
   "settings": {
-    "import/extensions": [".ts"],
     "import/resolver": {
       "node": {
         "extensions": [".ts"],
