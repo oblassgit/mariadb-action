@@ -27,7 +27,27 @@ if [ -n "$INPUT_MYSQL_DATABASE" ]; then
   docker_run="$docker_run -e MYSQL_DATABASE=$INPUT_MYSQL_DATABASE"
 fi
 
+docker_run="$docker_run --health-cmd='healthcheck.sh --connect --innodb_initialized' --health-start-interval=20s --health-start-interval=3s"
 docker_run="$docker_run -d -p $INPUT_HOST_PORT:$INPUT_CONTAINER_PORT mariadb:$INPUT_MARIADB_VERSION --port=$INPUT_CONTAINER_PORT"
 docker_run="$docker_run --character-set-server=$INPUT_CHARACTER_SET_SERVER --collation-server=$INPUT_COLLATION_SERVER"
 
-sh -c "$docker_run"
+CONTAINER_NAME=$( "$docker_run" )
+
+echo "Waiting for container $CONTAINER_NAME to start..."
+
+# Loop until the container is healthy
+while true; do
+    # Get the health status of the container
+    HEALTH=$(docker inspect --format='{{.State.Health.Status}}' "$CONTAINER_NAME" 2>/dev/null)
+
+    # Check if the container is healthy
+    if [ "$HEALTH" = "healthy" ]; then
+        echo "Container $CONTAINER_NAME is healthy!"
+        break
+    else
+        echo "Container $CONTAINER_NAME is still starting (current status: $HEALTH)"
+        sleep 1
+    fi
+done
+
+echo "Container $CONTAINER_NAME is now started and healthy."
