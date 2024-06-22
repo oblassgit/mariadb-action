@@ -44,7 +44,7 @@ while true; do
     if [ "$HEALTH" = "unhealthy" ]; then
         echo "Container $CONTAINER_NAME is healthy!"
         break
-    else if [ "$HEALTH" = "healthy" ]; then
+    elif [ "$HEALTH" = "healthy" ]; then
         echo "Container $CONTAINER_NAME is healthy!"
         break
     else
