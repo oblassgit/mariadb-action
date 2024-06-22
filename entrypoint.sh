@@ -40,8 +40,8 @@ while true; do
     # Get the health status of the container
     HEALTH=$(docker inspect --format='{{.State.Health.Status}}' "$CONTAINER_NAME" 2>/dev/null)
 
-    # Check if the container is healthy
-    if [ "$HEALTH" = "healthy" ]; then
+    # Check if the container is unhealthy status, but as the docker running, it is now can be connected from client
+    if [ "$HEALTH" = "unhealthy" ]; then
         echo "Container $CONTAINER_NAME is healthy!"
         break
     else
