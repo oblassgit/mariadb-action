@@ -30,7 +30,7 @@ fi
 docker_run="$docker_run -d -p $INPUT_HOST_PORT:$INPUT_CONTAINER_PORT docker.io/library/mariadb:$INPUT_MARIADB_VERSION --port=$INPUT_CONTAINER_PORT"
 docker_run="$docker_run --character-set-server=$INPUT_CHARACTER_SET_SERVER --collation-server=$INPUT_COLLATION_SERVER"
 
-CONTAINER_NAME=$( "$docker_run" )
+CONTAINER_NAME=$(eval "$docker_run" )
 
 echo "Waiting for container $CONTAINER_NAME to start..."
 
