@@ -19,9 +19,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Set up MariaDB 10
-      uses: getong/mariadb-action@master
+      uses: getong/mariadb-action@v1.3
       with:
-        mysql version: 10.4.10
+        mariadb version: 10.4.10
         mysql database: test
         mysql root password: ${{ secrets.DatabasePassword }}
     - name: npm install, build, and test
